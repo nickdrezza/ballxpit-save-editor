@@ -1,4 +1,5 @@
 LICENSE
+NOTICE
 README.md
 pyproject.toml
 src/ballxpit_save_editor/__init__.py
