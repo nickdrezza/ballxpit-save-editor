@@ -28,7 +28,7 @@ Hosted at: [nickdrezza.github.io/ballxpit-save-editor](https://nickdrezza.github
   <img alt="Privacy" src="https://img.shields.io/badge/privacy-client--side%20browser%20editing-2f6a45">
   <img alt="Hosting" src="https://img.shields.io/badge/hosting-Vercel%20or%20any%20static%20host-7a5533">
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-2f6a45">
+  <img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0--only-2f6a45">
 </p>
 
 </div>
@@ -311,3 +311,15 @@ By using this repository, you accept that:
 - the authors and contributors are not responsible for lost progress, corrupted saves, sync conflicts, bans, or other side effects
 
 If you are not comfortable restoring save data manually, do not use this project.
+
+## License
+
+This project is licensed under [GNU AGPLv3 only](LICENSE) (`AGPL-3.0-only`).
+See [NOTICE](NOTICE) for copyright information.
+
+You can use, change, and sell copies under the license terms.
+If you distribute covered code, provide its source under the same license.
+If you change the project and let users access it over a network,
+offer those users the source of your version.
+
+Earlier releases keep the license terms that applied to them.
