@@ -1,39 +1,15 @@
-<div align="center">
-
 # BALL x PIT Save Editor
 
-### Browser-first, open-source harvest respec tooling for BALL x PIT
+**Rethink your build. Back up your save.**
 
-Static website for client-side save editing, plus a Python CLI for local backup-first workflows.
+![BALL x PIT Save Editor: back up the save, edit harvest skills, then verify in game.](docs/readme-banner.svg)
 
-Hosted at: [nickdrezza.github.io/ballxpit-save-editor](https://nickdrezza.github.io/ballxpit-save-editor/)
+An unofficial editor for saved harvest skills. Use the browser editor for local file processing,
+or the Python CLI for a workflow with persistent backup folders.
 
-<p>
-  <a href="#quick-start"><strong>Quick Start</strong></a>
-  ·
-  <a href="#browser-editor"><strong>Browser Editor</strong></a>
-  ·
-  <a href="#host-it-yourself"><strong>Host It Yourself</strong></a>
-  ·
-  <a href="#command-line"><strong>CLI</strong></a>
-  ·
-  <a href="./docs/harvest-upgrade-pair-research.md"><strong>Research</strong></a>
-  ·
-  <a href="./docs/known-issues.md"><strong>Known Issues</strong></a>
-</p>
-
-<p>
-  <img alt="Status" src="https://img.shields.io/badge/status-experimental-b75a2f">
-  <img alt="Surface" src="https://img.shields.io/badge/surface-static%20site%20%2B%20CLI-8e522c">
-  <img alt="Privacy" src="https://img.shields.io/badge/privacy-client--side%20browser%20editing-2f6a45">
-  <img alt="Hosting" src="https://img.shields.io/badge/hosting-Vercel%20or%20any%20static%20host-7a5533">
-  <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
-  <img alt="License" src="https://img.shields.io/badge/license-AGPL--3.0--only-2f6a45">
-</p>
-
-</div>
-
----
+[**Open the editor →**](https://nickdrezza.github.io/ballxpit-save-editor/)
+· [CLI](#command-line)
+· [Known issues](docs/known-issues.md)
 
 > [!WARNING]
 > This is an unofficial, open-source save editor for **BALL x PIT**.
@@ -48,9 +24,9 @@ Hosted at: [nickdrezza.github.io/ballxpit-save-editor](https://nickdrezza.github
 > 3. Test small edits first.
 > 4. Verify the result in-game before making more changes.
 
-## Why This Exists
+## What you can change
 
-BALL x PIT does not currently expose a simple in-game way to respec harvest choices. This project focuses on one job:
+This editor focuses on saved harvest choices:
 
 - inspect your roster
 - reshuffle saved harvest skills without changing the save structure
@@ -59,46 +35,6 @@ BALL x PIT does not currently expose a simple in-game way to respec harvest choi
 - document the parts of the game's upgrade logic we still have not decoded
 
 It stays conservative by default, with an optional Unlocked mode for users who knowingly want to bypass level checks.
-
-## Portfolio Notes
-
-- **Problem:** save editing is risky, game-specific, and easy to make opaque.
-- **Approach:** keep the main editor static and client-side, then pair it with a Python CLI for backup-first local workflows.
-- **What it shows:** reverse engineering, conservative UX guardrails, binary roundtrip checks, and clear public risk documentation.
-- **Ship surface:** one repo can serve the website from GitHub Pages while still supporting local CLI usage.
-
-## At A Glance
-
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h3>Static Website</h3>
-      <p>Plain <code>HTML/CSS/JS</code>. No framework, no build step, no backend required.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Client-Side Processing</h3>
-      <p>The browser editor parses, verifies, and rewrites save data locally in your browser.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>CLI Included</h3>
-      <p>The Python CLI supports backup-first local editing, roundtrip checks, and backup cleanup.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="33%" valign="top">
-      <h3>Release Friendly</h3>
-      <p>A GitHub release can ship the static site files directly, with no app wrapper and no native packaging.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Simple Guardrails</h3>
-      <p>Any editable character can choose any supported harvest skill, while normal mode keeps the character within saved slot and level limits.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Research Driven</h3>
-      <p>Known gaps in the reverse-engineering work are tracked openly in <a href="./docs/known-issues.md"><code>docs/known-issues.md</code></a>.</p>
-    </td>
-  </tr>
-</table>
 
 ## Quick Start
 
@@ -114,6 +50,8 @@ It stays conservative by default, with an optional Unlocked mode for users who k
 ### CLI
 
 ```bash
+git clone https://github.com/nickdrezza/ballxpit-save-editor.git
+cd ballxpit-save-editor
 python3 -m venv .venv
 . .venv/bin/activate
 python3 -m pip install --upgrade pip setuptools
@@ -141,6 +79,9 @@ What it does **not** do:
 - it does not upload your save to a server
 - it does not write directly into the Steam save directory
 - it does not claim to fully emulate the game's real offer-generation logic yet
+
+<details>
+<summary>Host it yourself</summary>
 
 ## Host It Yourself
 
@@ -184,6 +125,8 @@ python3 -m http.server 4173
 
 Then open `http://localhost:4173`.
 
+</details>
+
 ## Command Line
 
 The CLI stays useful when you want a local, file-system-aware workflow with persistent backup folders.
@@ -220,7 +163,7 @@ The CLI is more automated than the website:
 
 ## Current Guardrail
 
-The browser editor now uses a simpler, portfolio-friendly rule:
+The browser editor follows these rules:
 
 - any editable character can pick any supported harvest skill
 - normal mode respects level unlock counts at levels `3`, `6`, and `10`
@@ -250,6 +193,9 @@ Tracking file:
 
 - [Harvest Upgrade Pair Research](./docs/harvest-upgrade-pair-research.md)
 - [Known Issues](./docs/known-issues.md)
+
+<details>
+<summary>Project layout and development</summary>
 
 ## Project Layout
 
@@ -292,6 +238,8 @@ For a GitHub release:
 - the website can be hosted directly from the repository root
 - the CLI can be installed with `pip install .`
 - there is no native app wrapper and no bundled executable in the current design
+
+</details>
 
 ## Legal And Risk Notice
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="title desc">
+  <title id="title">BALL x PIT. Rethink your build. Back up your save.</title>
+  <desc id="desc">A local editor for saved harvest skills.</desc>
+  <rect width="960" height="300" rx="24" fill="#f7f0e7"/>
+  <circle cx="932" cy="8" r="170" fill="#aa5c32" opacity="0.06"/>
+  <g font-family="system-ui, sans-serif" fill="#252526">
+    <text x="52" y="105" font-size="44" font-weight="700">BALL x PIT</text>
+    <text x="54" y="156" font-size="23">Rethink your build. Back up your save.</text>
+    <text x="54" y="218" font-size="15" fill="#5b5a60">A local editor for saved harvest skills.</text>
+  </g>
+  <rect x="535" y="81" width="108" height="131" rx="15" fill="#fff"/>
+  <rect x="680" y="81" width="108" height="131" rx="15" fill="#aa5c32"/>
+  <rect x="825" y="81" width="82" height="131" rx="15" fill="#fff"/>
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M568 122 H610 V169 H568 Z M578 131 H600 M578 141 H600" stroke="#aa5c32"/>
+    <path d="M717 164 L749 128 M713 169 L723 166" stroke="#fff"/>
+    <path d="M847 148 L860 162 L887 130" stroke="#aa5c32"/>
+  </g>
+  <g font-family="system-ui, sans-serif" text-anchor="middle" font-size="15" fill="#725744">
+    <text x="589" y="243">Back up</text><text x="734" y="243">Edit</text><text x="866" y="243">Verify</text>
+  </g>
+</svg>
